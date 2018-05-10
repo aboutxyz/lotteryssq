@@ -15,14 +15,16 @@ ss3 = Series(data.red3)
 ss4 = Series(data.red5)
 ss5 = Series(data.red5)
 ss6 = Series(data.red6)
+ss7 = Series(data.blue)
 
-from pyecharts import Bar
-
+# from pyecharts import Bar
 attr = pd.concat([ss1,ss2,ss3,ss4,ss5,ss6]).value_counts(sort = False).index.tolist()
+attr = [int(i) for i in attr]
 v1 = pd.concat([ss1,ss2,ss3,ss4,ss5,ss6]).value_counts(sort = False).values.tolist()
-bar = Bar(u"双色球")
-bar.add(u"红球", attr, v1)
-bar.render()
+v1 = [int(i) for i in v1]
+# bar = Bar(u"双色球")
+# bar.add(u"红球", attr, v1)
+# bar.render()
 
 
 db.close()
